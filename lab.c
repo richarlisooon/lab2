@@ -76,10 +76,9 @@ void search(mt *arr,int n, int crit){
 		case 3:
 			printf("What amount do you need? ");
 			scanf("%d",&samount);
-			while (var!=1){
-				for (int i=0;i<n;i++){
-					if (samount==arr[i].amount)
-						printf("%s %s %d\n",arr[i].type,arr[i].country,arr[i].amount);
+			for (int i=0;i<n;i++){
+				if (samount==arr[i].amount)
+					printf("%s %s %d\n",arr[i].type,arr[i].country,arr[i].amount);
 				}
 			}
 			break;

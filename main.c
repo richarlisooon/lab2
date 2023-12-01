@@ -26,9 +26,9 @@ int main(){
 				else{
 					read(&arr,&n);
 					if (!arr)
-						printf("error");
+						printf("error\n");
 					else
-						printf("load %d",n);
+						printf("loaded %d\n",n);
 				}
 				break;
 			}

@@ -31,11 +31,9 @@ void read(mt **arr,int *n){
 		return;
 	}
 	*arr=(mt *)calloc(*n,sizeof(mt));
-	for (int i=0;i<*n;i++){
-		if (fscanf(fp,"%s %s %d",(*arr)[i].type,(*arr)[i].country,&(*arr)[i].amount)!=3)
-			break;
+	for (int i=0;i<*n;i++)
+		fscanf(fp,"%s %s %d",(*arr)[i].type,(*arr)[i].country,&(*arr)[i].amount)
 	fclose(fp);
-	}
 }
 void write(mt *arr,int n){
 	if (n<=0)
@@ -43,6 +41,7 @@ void write(mt *arr,int n){
 	FILE *fp=fopen("file.txt","w");
 	if (!fp)
 		return;
+	fprintf(fp,"%d\n",n)
 	for (int i=0;i<n;i++){
 		fprintf(fp,"%s %s %d\n",arr[i].type,arr[i].country,arr[i].amount);
 	}
@@ -77,7 +76,7 @@ void search(mt *arr,int n, int crit){
 		case 3:
 			printf("What amount do you need? ");
 			scanf("%d",&samount);
-			while (getchar()!='\n'){
+			while (var!=1){
 				for (int i=0;i<n;i++){
 					if (samount==arr[i].amount)
 						printf("%s %s %d\n",arr[i].type,arr[i].country,arr[i].amount);
